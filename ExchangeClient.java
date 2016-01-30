@@ -27,7 +27,7 @@ public class ExchangeClient {
 
             }
             //Socket socket = new Socket(args[0], Integer.parseInt(args[1]));
-            Socket socket = new Socket(codebb.cloudapp.net, 17429);
+            Socket socket = new Socket("codebb.cloudapp.net", 17429);
             try {
                 PrintWriter pout = new PrintWriter(socket.getOutputStream());
                 BufferedReader bin = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -44,13 +44,13 @@ public class ExchangeClient {
                 pout.close();
                 bin.close();
             }
-            catch {
+            catch (Exception e) {
                 socket.close();
             }
             
         }
-        catch {
-            
+        catch (Exception e) {
+            System.out.println("Could not connect or something");
         }
         
     }
