@@ -32,7 +32,19 @@ public class ExchangeClient {
                 //     pout.println(args[i]);
                 // }
                 pout.println("MY_CASH");
+
+
+
+                for (int i = 0; i < args.length; i++) {
+                    pout.print(args[i] + " ");
+                }
+
+
+
+                pout.println();
                 pout.println("CLOSE_CONNECTION");
+
+
                 pout.flush();
                 String line;
                 while ((line = bin.readLine()) != null) {
@@ -42,6 +54,7 @@ public class ExchangeClient {
                 bin.close();
             }
             catch (Exception e) {
+                System.out.println("Socket broke or something");
                 socket.close();
             }
             
