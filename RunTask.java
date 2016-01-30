@@ -6,8 +6,9 @@ public class RunTask {
 	
 	
 	public static void main(String[] args) {
+		System.out.println("Started!");
 		timer = new Timer();
-		timer.schedule(new ExchangeClient(), 1000 * 13 * 60);
+		timer.schedule(new ExchangeClient(), 1000 * 12 * 60);
 	}
 	
 }

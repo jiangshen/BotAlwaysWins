@@ -183,10 +183,15 @@ public class ExchangeClient extends TimerTask {
     	int nAmount = (int) (getMoney() / dAskPrice);
     	
     	//System.out.println("BID " + stock.getSymbol() + " " + dAskPrice + " " + nAmount);
-    	pout.println("BID " + stock.getSymbol() + " " + dAskPrice + " " + nAmount);
-    	pout.flush();
-    	System.out.println(bin.readLine());
-    	System.out.println("I think we just bought " + nAmount + " " + stock.getSymbol() + " at " + dAskPrice);
+    	if (nAmount >= 5) {
+    		pout.println("BID " + stock.getSymbol() + " " + dAskPrice + " " + nAmount);
+        	pout.flush();
+        	System.out.println(bin.readLine());
+        	System.out.println("I think we just bought " + nAmount + " " + stock.getSymbol() + " at " + dAskPrice);
+    	} else {
+    		System.out.println(nAmount + " is not enough to buy, in my standards.");
+    	}
+    	
     }
 
 }
