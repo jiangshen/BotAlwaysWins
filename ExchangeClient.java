@@ -22,19 +22,16 @@ public class ExchangeClient {
      */
     public static void main(String[] args) throws IOException {
         try {
-            if (args.length < 5) {
-                System.out.println("Usage: \nclientTask <host> <port> <user> <password> <command...>");
-
-            }
             //Socket socket = new Socket(args[0], Integer.parseInt(args[1]));
             Socket socket = new Socket("codebb.cloudapp.net", 17429);
+            PrintWriter pout = new PrintWriter(socket.getOutputStream());
+            BufferedReader bin = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             try {
-                PrintWriter pout = new PrintWriter(socket.getOutputStream());
-                BufferedReader bin = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                pout.println(args[2] + " " + args[3]);
-                for (int i = 4; i < args.length; i++) {
-                    pout.println(args[i]);
-                }
+                pout.println("TheBot Iguess");
+                // for (int i = 4; i < args.length; i++) {
+                //     pout.println(args[i]);
+                // }
+                pout.println("MY_CASH");
                 pout.println("CLOSE_CONNECTION");
                 pout.flush();
                 String line;
