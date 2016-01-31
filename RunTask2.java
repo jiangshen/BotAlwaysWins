@@ -1,6 +1,6 @@
 import java.util.Timer;
 
-public class RunTask {
+public class RunTask2 {
 	
 	private static Timer timer;
 	
@@ -8,7 +8,7 @@ public class RunTask {
 	public static void main(String[] args) {
 		System.out.println("Started!");
 		timer = new Timer();
-		timer.schedule(new ExchangeClient(), 1000 * 16 * 60);
+		timer.schedule(new ExchangeClient(), 200);
 	}
 	
 }
